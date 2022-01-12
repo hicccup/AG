@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: "* * * * *"
+    - cron: '0 0/4 * * *'
 
 jobs:
   autogreen:
@@ -20,5 +20,5 @@ jobs:
           git config --local user.name "hicccup"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
-          git commit --allow-empty -m "Over Size"
+          git commit --allow-empty -m "Over size"
           git push
